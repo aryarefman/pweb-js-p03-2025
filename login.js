@@ -36,9 +36,10 @@ function handleLogin(event) {
                     // 1. Username ditemukan DAN password cocok
                     displayMessage('success', `Selamat datang kembali, ${user.firstName}! Mengalihkan...`);
                     localStorage.setItem('firstName', user.firstName);
+                    localStorage.setItem('currentUser', user.username); // Ditambahkan: Set currentUser untuk check login
                     
                     setTimeout(() => {
-                        window.location.href = 'home.html';
+                        window.location.href = 'recipes.html'; // Diubah dari home.html
                     }, 1500);
                 } else {
                     // 2. Jika username tidak ditemukan ATAU password salah
@@ -75,4 +76,4 @@ function setLoadingState(isLoading) {
             loginButton.disabled = false;
         }
     }
-} 
+}

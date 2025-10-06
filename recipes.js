@@ -2,7 +2,7 @@
 const currentUser = localStorage.getItem("currentUser")
 const firstName = localStorage.getItem("firstName")
 if (!currentUser || !firstName) {
-  window.location.href = "index.html"
+  window.location.href = "login.html" // Diubah dari index.html
 }
 
 // Display user name in navbar
@@ -12,7 +12,7 @@ document.getElementById("userName").textContent = `Welcome, ${firstName}`
 document.getElementById("logoutButton").addEventListener("click", () => {
   localStorage.removeItem("firstName")
   localStorage.removeItem("currentUser")
-  window.location.href = "index.html"
+  window.location.href = "home.html" // Diubah ke home.html (homepage)
 })
 
 // Global variables

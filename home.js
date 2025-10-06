@@ -11,10 +11,10 @@
         primaryCta.setAttribute("href", "recipes.html")
       }
     } else {
-      // Belum login → tetap menuju ke index.html (login/register)
+      // Belum login → arahkan ke login.html
       if (primaryCta) {
         primaryCta.textContent = "Get Started"
-        primaryCta.setAttribute("href", "index.html")
+        primaryCta.setAttribute("href", "login.html") // Diubah dari index.html
       }
     }
   } catch (e) {
