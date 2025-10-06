@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap');
+
+:root {
+    --primary-color: #A0522D; /* SaddleBrown, warna hangat ala kopi/rempah */
+    --secondary-color: #FDF5E6; /* OldLace, krem lembut */
+    --text-color: #362D2C; /* Darker brown */
+    --light-text-color: #7A7A7A;
+    --button-hover: #8B4513; /* Darker SaddleBrown */
+    --input-border: #D3C1B5;
+    --box-shadow: rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: url('image/background\ masak.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Mencegah scroll saat ada animasi */
+    color: var(--text-color);
+    position: relative;
+}
+
+/* Overlay untuk membuat teks lebih mudah dibaca */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Efek gelap */
+    backdrop-filter: blur(5px); /* Efek blur pada background */
+    z-index: 1;
+}
+
+.login-container {
+    background-color: var(--secondary-color);
+    padding: 3rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--box-shadow);
+    width: 380px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transform: translateY(0);
+    opacity: 1;
+    animation: fadeInSlideUp 0.8s ease-out;
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    margin-bottom: 2rem;
+}
+
+.logo i {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.logo h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin: 0.5rem 0 0.2rem;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.logo p {
+    font-size: 1rem;
+    color: var(--light-text-color);
+    margin-top: 0.5rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.input-group label i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.input-group input {
+    width: calc(100% - 20px); /* Kurangi padding */
+    padding: 12px 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.2);
+    outline: none;
+}
+
+.login-button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-button:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-button .loading-spinner {
+    display: none;
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.login-button.loading .button-text {
+    visibility: hidden;
+}
+
+.login-button.loading .loading-spinner {
+    display: inline-block;
+}
+/* --- GANTI BAGIAN SOCIAL LOGIN DENGAN KODE INI --- */
+
+.social-login {
+    margin-top: 2.5rem;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.social-login p {
+    color: var(--light-text-color);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-btn {
+    padding: 10px 15px;
+    border: none; /* Hapus border */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold; /* Buat teks lebih tebal */
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    color: #fff; /* Teks putih untuk kontras */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan sedikit bayangan */
+}
+
+.social-btn i {
+    margin-right: 8px;
+    font-size: 1.1em; /* Sedikit perbesar ikon */
+}
+
+/* Tombol Google */
+.social-btn.google {
+    background-color: #DB4437; /* Warna merah khas Google */
+}
+
+/* Tombol Facebook */
+.social-btn.facebook {
+    background-color: #4267B2; /* Warna biru khas Facebook */
+}
+
+.social-btn:hover {
+    transform: translateY(-3px); /* Efek terangkat saat disentuh */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan lebih jelas saat hover */
+    opacity: 0.9; /* Sedikit transparan saat hover */
+}
+
+.message {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.message.success {
+    color: #306530; /* Dark green */
+    background-color: #e6ffe6; /* Light green */
+    border: 1px solid #73b773;
+    animation: messagePop 0.5s ease-out;
+}
+
+.message.error {
+    color: #8B0000; /* Dark red */
+    background-color: #ffe6e6; /* Light red */
+    border: 1px solid #d45f5f;
+    animation: messageShake 0.4s ease-out;
+}
+
+@keyframes messagePop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes messageShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
