@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     homepage baru (pure HTML/CSS/JS) 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Recipe Collection - Home</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+     Navbar reuse 
+    <nav class="navbar" aria-label="Primary">
+      <div class="nav-container">
+        <a class="nav-brand" href="home.html" aria-label="Go to homepage">
+          <span class="brand-icon" aria-hidden="true">🍳</span>
+          <h2>Recipe Collection</h2>
+        </a>
+        <div class="nav-user" role="navigation" aria-label="Main navigation">
+          <a class="btn-secondary" href="recipes.html" style="text-decoration:none;">Explore Recipes</a>
+          <a class="btn-logout" href="index.html" style="text-decoration:none;">Login / Register</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div class="container">
+         Hero 
+        <header class="page-header" role="banner">
+          <h1 class="text-balance">Cook Smarter, Eat Better</h1>
+          <p class="text-pretty">Discover, search, and explore delicious recipes from around the world—tailored to your taste.</p>
+          <div style="display:flex; gap:12px; justify-content:center; margin-top:20px;">
+             CTA yang menyesuaikan status login 
+            <a id="primaryCta" class="btn-primary" href="index.html">Get Started</a>
+            <a class="btn-secondary" href="recipes.html">Explore Recipes</a>
+          </div>
+        </header>
+
+         Features: gunakan gaya kartu yang ada 
+        <section aria-labelledby="features-title" style="margin-top:32px;">
+          <h2 id="features-title" class="sr-only">Features</h2>
+          <div class="recipes-grid">
+            <article class="recipe-card" aria-label="Smart Search">
+              <div class="recipe-content">
+                <div class="recipe-header">
+                  <h3 class="recipe-name">🔎 Smart Search</h3>
+                </div>
+                <p class="ingredients-list">Cari berdasarkan nama, bahan, masakan, atau tag. Temukan resep favorit Anda lebih cepat.</p>
+              </div>
+            </article>
+
+            <article class="recipe-card" aria-label="Rich Details">
+              <div class="recipe-content">
+                <div class="recipe-header">
+                  <h3 class="recipe-name">📖 Rich Details</h3>
+                </div>
+                <p class="ingredients-list">Lihat bahan, langkah, waktu memasak, kesulitan, rating, dan banyak lagi.</p>
+              </div>
+            </article>
+
+            <article class="recipe-card" aria-label="Beautiful UI">
+              <div class="recipe-content">
+                <div class="recipe-header">
+                  <h3 class="recipe-name">🎨 Beautiful UI</h3>
+                </div>
+                <p class="ingredients-list">Antarmuka yang bersih dan responsif dengan pengalaman yang nyaman di semua perangkat.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+         Callout 
+        <section aria-labelledby="cta-title" style="margin-top:40px;">
+          <h2 id="cta-title" class="sr-only">Get started</h2>
+          <div class="filters-section" role="note">
+            <div style="flex:1; min-width:260px;">
+              <h3 style="font-size:22px; font-weight:800; margin-bottom:8px; color:var(--text-primary);">Ready to start cooking?</h3>
+              <p style="color:var(--text-secondary); font-weight:500;">Buat akun gratis dan mulai jelajahi ratusan resep yang lezat.</p>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <a class="btn-primary" href="index.html">Create Account</a>
+              <a class="btn-secondary" href="recipes.html">Browse as Guest</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="home.js"></script>
+  </body>
+</html>
