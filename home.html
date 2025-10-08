@@ -3,105 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Masak.in</title>
+    <title>Welcome - Masak.in</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="login.css">
-    <style>
-        body {
-            /* Use the same background as login.css */
-            background: var(--background) !important;
-            font-family: 'Sen', sans-serif !important;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-        .nav-brand, .nav-links a, .hero, .features, .feature-card, .features h2, .feature-card h3, .feature-card p {
-            font-family: 'Sen', sans-serif !important;
-        }
-        /* Make sure content is above pizza images */
-        .nav-container, .hero, .features {
-            position: relative;
-            z-index: 3;
-        }
-        /* Add a subtle overlay for readability */
-        .background-overlay-home {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(255,255,255,0.18);
-            backdrop-filter: blur(4px);
-            z-index: 2;
-            pointer-events: none;
-        }
-        /* Responsive tweaks for pizza images */
-        @media (max-width: 768px) {
-            .food-image {
-                max-width: 18vw;
-            }
-        }
-        @media (max-width: 480px) {
-            .food-image {
-                max-width: 12vw;
-            }
-        }
-        /* Make hero and features stand out */
-        .hero, .features {
-            background: rgba(255,255,255,0.10);
-            border-radius: 18px;
-            margin: 32px auto 0 auto;
-            max-width: 900px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-        }
-        .hero {
-            margin-top: 48px;
-        }
-    </style>
 </head>
 <body>
-    <!-- Pizza images background (reuse from login page) -->
-    <img src="assets/pizza-1.png" class="food-image food-1" alt="Pizza" />
-    <img src="assets/pizza-3.png" class="food-image food-3" alt="Pizza" />
-    <img src="assets/pizza-5.png" class="food-image food-5" alt="Pizza" />
-    <img src="assets/pizza-6.png" class="food-image food-6" alt="Pizza" />
-    <img src="assets/pizza-7.png" class="food-image food-7" alt="Pizza" />
-    <div class="background-overlay-home"></div>
+    <div class="background-overlay"></div>
+    <img src="image/1.png" alt="Food Image 1" class="food-image food-1">
+    <img src="image/3.png" alt="Food Image 3" class="food-image food-3">
+    <img src="image/5.png" alt="Food Image 5" class="food-image food-5">
+    <img src="image/6.png" alt="Food Image 6" class="food-image food-6">
+    <img src="image/7.png" alt="Food Image 7" class="food-image food-7">
 
-    <!-- Navbar reuse -->
-    <nav class="nav-container">
-        <a href="home.html" class="nav-brand">
-            Recipe Collection
-        </a>
-        <div class="nav-links">
-            <a href="recipes.html">Explore Recipes</a>
-            <a href="login.html">Login / Register</a>
+    <main class="home1-main-content">
+        <div class="logo-home">
+            <i class="fas fa-utensils" aria-hidden="true"></i>
+            <h2>Masak.in</h2>
+            <p class="logo-desc">Your Culinary Journey Starts Here</p>
         </div>
-    </nav>
-
-    <!-- Hero -->
-    <section class="hero">
-        <h1>Cook Smarter, Eat Better</h1>
-        <p>Discover, search, and explore delicious recipes from around the world—tailored to your taste.</p>
-        <a id="primaryCta" href="#" class="cta-button">Get Started</a>
-    </section>
-
-    <!-- Features: gunakan gaya kartu yang ada -->
-    <section class="features">
-        <h2>Why Join Masak.in?</h2>
-        <div class="feature-cards">
-            <div class="feature-card">
-                <h3>🔎 Menu Search</h3>
-                <p>Cari menu makanan favorit atau minuman segar dengan mudah, cukup ketik nama atau bahan yang kamu punya.</p>
-            </div>
-            <div class="feature-card">
-                <h3>👤 Personal Experience</h3>
-                <p>Buat akun untuk menyimpan resep favorit, menulis ulasan, dan dapatkan rekomendasi menu sesuai selera kamu.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🍽️ Food Gallery</h3>
-                <p>Lihat foto makanan, detail menu, harga, rating, dan info restoran—semua dalam satu aplikasi.</p>
-            </div>
-        </div>
-    </section>
-
+        <h1>Welcome to <span style="color:var(--primary-color)">Masak.in</span></h1>
+        <p class="desc">
+            Jelajahi berbagai resep makanan dan minuman favorit, simpan menu andalanmu, dan temukan inspirasi kuliner setiap hari.<br>
+            Mulai perjalanan memasakmu bersama Masak.in!
+        </p>
+        <a href="#" id="primaryCta" class="cta-btn">Get Started</a>
+        <nav class="home-links" aria-label="Main navigation">
+            <a href="login.html">Sign In</a> | 
+            <a href="recipes.html" id="guest-link">Login as a Guest</a>
+        </nav>
+    </main>
+    
     <script src="home.js"></script>
 </body>
 </html>
