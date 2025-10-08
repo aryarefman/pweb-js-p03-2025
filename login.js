@@ -18,7 +18,6 @@ function handleLogin(event) {
 
     setLoadingState(true);
 
-    // Kita akan mengambil data untuk satu user saja agar lebih efisien
     fetch(`https://dummyjson.com/users/filter?key=username&value=${username}`)
         .then(res => {
             if (!res.ok) {
@@ -27,22 +26,23 @@ function handleLogin(event) {
             return res.json();
         })
         .then(data => {
-            // Jeda buatan agar loading terlihat
             setTimeout(() => {
-                const user = data.users[0]; // Ambil user pertama dari hasil filter
+                const user = data.users[0];
 
-                // --- BAGIAN YANG DIPERBAIKI ADA DI SINI ---
                 if (user && user.password === password) {
-                    // 1. Username ditemukan DAN password cocok
                     displayMessage('success', `Selamat datang kembali, ${user.firstName}! Mengalihkan...`);
                     localStorage.setItem('firstName', user.firstName);
-                    localStorage.setItem('currentUser', user.username); // Ditambahkan: Set currentUser untuk check login
-                    
+                    localStorage.setItem('currentUser', user.username);
+
+                    const images = document.querySelectorAll('.food-image');
+                    images.forEach((img, index) => {
+                        img.classList.add(index % 2 === 0 ? 'animate-out-left' : 'animate-out-right');
+                    });
+
                     setTimeout(() => {
-                        window.location.href = 'recipes.html'; // Diubah dari home.html
-                    }, 1500);
+                        window.location.href = 'recipes.html';
+                    }, 400);
                 } else {
-                    // 2. Jika username tidak ditemukan ATAU password salah
                     displayMessage('error', 'Username atau Password salah. Coba lagi.');
                     setLoadingState(false);
                 }

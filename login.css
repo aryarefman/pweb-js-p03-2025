@@ -1,54 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
 
 :root {
-    --primary-color: #A0522D; /* SaddleBrown, warna hangat ala kopi/rempah */
-    --secondary-color: #FDF5E6; /* OldLace, krem lembut */
-    --text-color: #362D2C; /* Darker brown */
-    --light-text-color: #7A7A7A;
-    --button-hover: #8B4513; /* Darker SaddleBrown */
-    --input-border: #D3C1B5;
-    --box-shadow: rgba(0, 0, 0, 0.15);
+    --primary-color: #ff6b35;
+    --primary-dark: #e85d2a;
+    --primary-light: #ff8c61;
+    --secondary-color: #f7931e;
+    --accent-color: #4ecdc4;
+    --background: #fafbfc;
+    --background-alt: #f4f6f8;
+    --card-bg: rgba(255, 255, 255, 0.2);
+    --card-hover: rgba(255, 255, 255, 0.3);
+    --text-primary: #1a1a2e;
+    --text-secondary: #6c757d;
+    --text-muted: #95a5a6;
+    --border-color: #e8ecef;
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    background: url('image/background\ masak.jpg') no-repeat center center fixed;
-    background-size: cover;
+    font-family: 'Sen', sans-serif;
+    background: var(--background);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    overflow: hidden; /* Mencegah scroll saat ada animasi */
-    color: var(--text-color);
+    overflow: hidden;
+    color: var(--text-primary);
     position: relative;
 }
 
-/* Overlay untuk membuat teks lebih mudah dibaca */
 .background-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Efek gelap */
-    backdrop-filter: blur(5px); /* Efek blur pada background */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
     z-index: 1;
 }
 
 .login-container {
-    background-color: var(--secondary-color);
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-lg);
     padding: 3rem 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px var(--box-shadow);
+    border-radius: 20px;
     width: 380px;
     max-width: 90%;
     text-align: center;
     position: relative;
     z-index: 2;
-    transform: translateY(0);
-    opacity: 1;
     animation: fadeInSlideUp 0.8s ease-out;
+    transition: all 0.3s ease;
 }
 
 @keyframes fadeInSlideUp {
@@ -62,6 +72,54 @@ body {
     }
 }
 
+.food-image {
+    position: absolute;
+    max-width: 30vw;
+    height: auto;
+    z-index: 2;
+    transition: all 0.4s ease-out;
+}
+
+.food-1 {
+    top: 35%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.food-3 {
+    top: 20%;
+    right: 10%;
+    transform: translate(50%, -50%);
+}
+
+.food-5 {
+    top: -2%;
+    right: 45%;
+    transform: translate(50%, -50%);
+}
+
+.food-6 {
+    bottom: 40%;
+    left: 32%;
+    transform: translate(-50%, 50%);
+}
+
+.food-7 {
+    bottom: 28%;
+    right: 28%;
+    transform: translate(50%, 50%);
+}
+
+.food-image.animate-out-left {
+    transform: translateX(-100vw) rotate(-360deg);
+    opacity: 0;
+}
+
+.food-image.animate-out-right {
+    transform: translateX(100vw) rotate(360deg);
+    opacity: 0;
+}
+
 .logo {
     margin-bottom: 2rem;
 }
@@ -71,27 +129,18 @@ body {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     animation: bounceIn 1s ease-out;
+    filter: drop-shadow(0 0 5px var(--primary-color));
 }
 
 @keyframes bounceIn {
-    0% {
-        transform: scale(0.3);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 1;
-    }
-    70% {
-        transform: scale(0.9);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
 }
 
 .logo h2 {
-    font-family: 'Playfair Display', serif;
+    font-family:  'Sen', sans-serif;
     font-size: 2.8rem;
     margin: 0.5rem 0 0.2rem;
     color: var(--primary-color);
@@ -100,8 +149,9 @@ body {
 
 .logo p {
     font-size: 1rem;
-    color: var(--light-text-color);
+    color: var(--text-secondary);
     margin-top: 0.5rem;
+    font-family: 'Sen', sans-serif;
 }
 
 .input-group {
@@ -113,9 +163,10 @@ body {
 .input-group label {
     display: block;
     margin-bottom: 0.6rem;
-    color: var(--text-color);
+    color: var(--text-primary);
     font-weight: bold;
     font-size: 0.95rem;
+    font-family: 'Sen', sans-serif;
 }
 
 .input-group label i {
@@ -124,19 +175,19 @@ body {
 }
 
 .input-group input {
-    width: calc(100% - 20px); /* Kurangi padding */
+    width: calc(100% - 20px);
     padding: 12px 10px;
-    border: 1px solid var(--input-border);
+    border: none;
     border-radius: 8px;
     font-size: 1rem;
-    color: var(--text-color);
-    background-color: #fff;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text-primary);
+    background-color: var(--card-bg);
+    transition: box-shadow 0.3s ease;
+    font-family: 'Sen', sans-serif;
 }
 
 .input-group input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.2);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
     outline: none;
 }
 
@@ -146,7 +197,7 @@ body {
     border: none;
     border-radius: 8px;
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--background);
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
@@ -157,12 +208,13 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
+    font-family: 'Sen', sans-serif;
 }
 
 .login-button:hover {
-    background-color: var(--button-hover);
+    background-color: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
 }
 
 .login-button:active {
@@ -172,29 +224,39 @@ body {
 
 .login-button .loading-spinner {
     display: none;
-    margin-left: 10px;
     font-size: 1.2rem;
+    color: var(--background);
 }
 
 .login-button.loading .button-text {
-    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .login-button.loading .loading-spinner {
     display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: spinAnime 1s linear infinite;
 }
-/* --- GANTI BAGIAN SOCIAL LOGIN DENGAN KODE INI --- */
+
+@keyframes spinAnime {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) rotate(360deg); }
+}
 
 .social-login {
     margin-top: 2.5rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--border-color);
     padding-top: 1.5rem;
 }
 
 .social-login p {
-    color: var(--light-text-color);
+    color: var(--text-secondary);
     margin-bottom: 1rem;
     font-size: 0.9rem;
+    font-family: 'Sen', sans-serif;
 }
 
 .social-buttons {
@@ -205,37 +267,37 @@ body {
 
 .social-btn {
     padding: 10px 15px;
-    border: none; /* Hapus border */
+    border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 0.9rem;
-    font-weight: bold; /* Buat teks lebih tebal */
+    font-weight: bold;
     display: flex;
     align-items: center;
     transition: all 0.3s ease;
-    color: #fff; /* Teks putih untuk kontras */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan sedikit bayangan */
+    box-shadow: var(--shadow-sm);
+    font-family: 'Sen', sans-serif;
 }
 
 .social-btn i {
     margin-right: 8px;
-    font-size: 1.1em; /* Sedikit perbesar ikon */
+    font-size: 1.1em;
 }
 
-/* Tombol Google */
 .social-btn.google {
-    background-color: #DB4437; /* Warna merah khas Google */
+    background-color: #DB4437;
+    color: #fff;
 }
 
-/* Tombol Facebook */
 .social-btn.facebook {
-    background-color: #4267B2; /* Warna biru khas Facebook */
+    background-color: #4267B2;
+    color: #fff;
 }
 
 .social-btn:hover {
-    transform: translateY(-3px); /* Efek terangkat saat disentuh */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan lebih jelas saat hover */
-    opacity: 0.9; /* Sedikit transparan saat hover */
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    opacity: 0.9;
 }
 
 .message {
@@ -243,20 +305,21 @@ body {
     font-size: 0.9rem;
     padding: 10px;
     border-radius: 5px;
+    font-family: 'Sen', sans-serif;
     transition: all 0.3s ease-in-out;
 }
 
 .message.success {
-    color: #306530; /* Dark green */
-    background-color: #e6ffe6; /* Light green */
-    border: 1px solid #73b773;
+    color: var(--background);
+    background-color: var(--success-color);
+    border: 1px solid var(--success-color);
     animation: messagePop 0.5s ease-out;
 }
 
 .message.error {
-    color: #8B0000; /* Dark red */
-    background-color: #ffe6e6; /* Light red */
-    border: 1px solid #d45f5f;
+    color: var(--background);
+    background-color: var(--error-color);
+    border: 1px solid var(--error-color);
     animation: messageShake 0.4s ease-out;
 }
 
@@ -269,4 +332,59 @@ body {
     0%, 100% { transform: translateX(0); }
     20%, 60% { transform: translateX(-5px); }
     40%, 80% { transform: translateX(5px); }
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        padding: 2rem 1.5rem;
+        width: 90%;
+    }
+
+    .logo i {
+        font-size: 2.5rem;
+    }
+
+    .logo h2 {
+        font-size: 2rem;
+    }
+
+    .login-button {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .social-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .food-image {
+        max-width: 15vw;
+    }
+
+    .food-1 {
+        top: 10%;
+        left: 5%;
+    }
+
+    .food-3 {
+        top: 10%;
+        right: 5%;
+    }
+
+    .food-6 {
+        bottom: 10%;
+        left: 5%;
+    }
+
+    .food-7 {
+        bottom: 10%;
+        right: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .food-image {
+        max-width: 10vw;
+    }
 }

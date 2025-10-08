@@ -3,84 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Collection</title>
+    <title>Global Recipe Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap">
     <link rel="stylesheet" href="recipes.css">
 </head>
-<body>
+<body data-theme="dark">
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand">
-                <!-- Added icon to brand -->
-                <span class="brand-icon">🍳</span>
-                <h2>Recipe Collection</h2>
-            </div>
+            <a href="#" class="nav-brand">
+                <i class="fas fa-utensils brand-icon"></i>
+                <span>Masak.in</span>
+            </a>
             <div class="nav-user">
-                <!-- Added user icon -->
-                <span class="user-icon">👋</span>
-                <span id="userName">Welcome, User</span>
+                <i class="fas fa-earth-americas user-icon"></i>
+                <span id="userName">World Chef</span>
+                <button id="themeToggleButton" class="btn-theme-toggle"><i class="fas fa-sun"></i></button>
                 <button id="logoutButton" class="btn-logout">Logout</button>
             </div>
         </div>
     </nav>
-    
+
     <main class="main-content">
-        <div class="container">
-            <!-- Added header section with better styling -->
-            <div class="page-header">
-                <h1>Discover Amazing Recipes</h1>
-                <p>Explore our collection of delicious recipes from around the world</p>
+        <section class="hero-section">
+            <div class="hero-content">
+                <section class="parallax">
+                    <img src="image/hill1.png" id="hill1">
+                    <img src="image/hill2.png" id="hill2">
+                    <img src="image/hill3.png" id="hill3">
+                    <img src="image/hill4.png" id="hill4">
+                    <img src="image/hill5.png" id="hill5">
+                    <img src="image/tree.png" id="tree">
+                    <div class="page-header" id="page-header">
+                        <h1>Global Recipe Collection</h1>
+                        <p>Discover authentic dishes from every corner of the world</p>
+                    </div>
+                    <img src="image/leaf.png" id="leaf">
+                    <img src="image/plant.png" id="plant">
+                </section>
             </div>
-            
+        </section>
+
+        <div class="recipes-container">
+            <div class="food-wrap food-1"><img src="image/1.png" class="food-image"></div>
+            <div class="food-wrap food-2"><img src="image/6.png" class="food-image"></div>
+            <div class="food-wrap food-3"><img src="image/3.png" class="food-image"></div>
+            <div class="food-wrap food-4"><img src="image/4.png" class="food-image"></div>
+            <div class="food-wrap food-5"><img src="image/5.png" class="food-image"></div>
+            <div id="loadingState" class="loading-state hidden">
+                <i class="fas fa-spinner loading-spinner"></i>
+                <p>Fetching global recipes...</p>
+            </div>
+
+            <div id="errorState" class="error-state hidden">
+                <i class="fas fa-exclamation-circle error-icon"></i>
+                <p>Something went wrong in the kitchen!</p>
+                <button id="retryButton" class="retry-btn">Retry</button>
+            </div>
+
             <div class="filters-section">
                 <div class="search-container">
-                    <!-- Added search icon -->
                     <div class="search-wrapper">
-                        <span class="search-icon">🔍</span>
-                        <input 
-                            type="text" 
-                            id="searchInput" 
-                            placeholder="Search recipes by name, cuisine, ingredients, or tags..."
+                        <i class="fas fa-magnifying-glass search-icon"></i>
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search for dishes from Italian, Japan, Mexican..."
                             class="search-input"
                         >
                     </div>
                 </div>
-                
+
                 <div class="filter-container">
-                    <label for="cuisineFilter">🌍 Cuisine:</label>
-                    <select id="cuisineFilter" class="cuisine-select">
-                        <option value="">All Cuisines</option>
-                    </select>
+                    <label for="cuisineFilter" class="filter-label">
+                        <i class="fas fa-earth-americas"></i> Country:
+                    </label>
+
+                    <div class="select-container">
+                        <select id="cuisineFilter" class="cuisine-select"></select>
+                    </div>
                 </div>
             </div>
-            
-            <div id="loadingState" class="loading-state hidden">
-                <div class="spinner-large"></div>
-                <p>Loading delicious recipes...</p>
-            </div>
-            
-            <div id="errorState" class="error-state hidden">
-                <div class="error-icon">⚠️</div>
-                <p>Failed to load recipes. Please try again.</p>
-                <button id="retryButton" class="btn-primary">Retry</button>
-            </div>
-            
+
             <div id="recipesGrid" class="recipes-grid"></div>
-            
+
             <div id="showMoreContainer" class="show-more-container hidden">
-                <button id="showMoreButton" class="btn-secondary">Show More Recipes</button>
+                <button id="showMoreButton" class="show-more-btn">Explore More Recipes</button>
             </div>
         </div>
     </main>
-    
-    <!-- Enhanced modal structure -->
+
     <div id="recipeModal" class="modal hidden">
-        <div class="modal-overlay"></div>
         <div class="modal-content">
-            <button class="modal-close">✕</button>
+            <button class="modal-close"><i class="fas fa-circle-xmark"></i></button>
             <div id="modalBody"></div>
         </div>
     </div>
-    
-    <script src="recipes.js"></script>
+
+    <script type="module" src="recipes.js"></script>
 </body>
 </html>
