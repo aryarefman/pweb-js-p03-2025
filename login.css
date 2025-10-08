@@ -178,7 +178,7 @@ body {
 .input-group input {
     width: calc(100% - 20px);
     padding: 12px 10px;
-    border: none;
+    border: 1.5px solid rgba(255, 107, 53, 0.5);
     border-radius: 8px;
     font-size: 1rem;
     color: var(--text-primary);
