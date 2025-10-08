@@ -6,10 +6,11 @@
   box-sizing: border-box;
 }
 
-/* Reuse color palette from styles.css for consistency */
+/* Color palette and theme support */
 :root {
   --primary-color: #ff6b35;
   --primary-dark: #e85d2a;
+  --primary-light: #ff8c61;
   --secondary-color: #f7931e;
   --accent-color: #4ecdc4;
   --background: #fafbfc;
@@ -21,7 +22,22 @@
   --error-color: #e74c3c;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-  --gradient-primary: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+/* Dark theme overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #181a20;
+    --card-bg: #23262f;
+    --text-primary: #f5f6fa;
+    --text-secondary: #b2becd;
+    --border-color: #23262f;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.32);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.48);
+    --accent-color: #3ddad7;
+    --gradient-primary: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-color) 100%);
+  }
 }
 
 body {
@@ -96,6 +112,14 @@ body {
   font-weight: bold;
   transition: all 0.3s ease;
   display: inline-block;
+  border: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .cta-button {
+    background: var(--card-bg);
+    color: var(--primary-light);
+  }
 }
 
 .cta-button:hover {
@@ -150,6 +174,13 @@ body {
   text-align: center;
 }
 
+@media (prefers-color-scheme: dark) {
+  .callout {
+    background: var(--primary-dark);
+    color: var(--text-primary);
+  }
+}
+
 .callout h2 {
   font-size: 32px;
   margin-bottom: 16px;
@@ -169,6 +200,14 @@ body {
   font-weight: bold;
   margin: 0 8px;
   transition: all 0.3s ease;
+  border: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .callout a {
+    background: var(--card-bg);
+    color: var(--primary-light);
+  }
 }
 
 .callout a:hover {
