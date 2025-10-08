@@ -4,7 +4,7 @@ if (!currentUser || !firstName) {
     window.location.href = "login.html";
 }
 
-document.getElementById("userName").textContent = `Welcome, ${firstName}`;
+document.getElementById("userName").innerHTML = `Welcome, <span style="font-weight: 1000;">${firstName}</span>`;
 
 document.getElementById("logoutButton").addEventListener("click", () => {
     localStorage.removeItem("firstName");
