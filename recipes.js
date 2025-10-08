@@ -108,9 +108,6 @@ window.addEventListener('scroll', () => {
     food3.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.3}px))`;
     food4.style.transform = `translate(50%, calc(-50% + ${scrollY * 0.35}px))`;
     food5.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.3}px))`;
-    food6.style.transform = `translate(50%, calc(-50% + ${scrollY * 0.25}px))`;
-    food7.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.2}px))`;
-
 });
 
 const selectContainer = document.querySelector('.select-container');

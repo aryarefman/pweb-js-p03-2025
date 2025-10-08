@@ -70,5 +70,18 @@
     "tailwindcss": "^4.1.9",
     "tw-animate-css": "1.3.3",
     "typescript": "^5"
-  }
+  },
+  "description": "| Nama | NRP |\r | ---------------------- | ---------- |\r | Nadia Kirana Afifah Prahandita | 5027241005 |\r | Danuja Prasasta Bastu | 5027241037 |\r | Az Zahrra Tasya Adelia | 5027241087 |\r ----",
+  "main": "home.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryarefman/pweb-js-p03-2025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aryarefman/pweb-js-p03-2025/issues"
+  },
+  "homepage": "https://github.com/aryarefman/pweb-js-p03-2025#readme"
 }

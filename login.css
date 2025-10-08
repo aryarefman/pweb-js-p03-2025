@@ -174,7 +174,6 @@ body {
     color: var(--primary-color);
 }
 
-/* Ganti CSS yang lama dengan ini */
 .input-group input {
     width: calc(100% - 20px);
     padding: 12px 10px;
@@ -185,7 +184,7 @@ body {
     background-color: var(--card-bg);
     transition: box-shadow 0.3s ease;
     font-family: 'Sen', sans-serif;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* <-- BARIS BARU: Bayangan ke dalam */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .input-group input:focus {
