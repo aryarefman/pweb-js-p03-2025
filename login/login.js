@@ -40,7 +40,7 @@ function handleLogin(event) {
                     });
 
                     setTimeout(() => {
-                        window.location.href = 'recipes.html';
+                        window.location.href = '../recipes/recipes.html';
                     }, 400);
                 } else {
                     displayMessage('error', 'Username atau Password salah. Coba lagi.');

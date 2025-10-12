@@ -1,7 +1,7 @@
 const currentUser = localStorage.getItem("currentUser");
 const firstName = localStorage.getItem("firstName");
 if (!currentUser || !firstName) {
-    window.location.href = "login.html";
+    window.location.href = "../login/login.html";
 }
 
 document.getElementById("userName").innerHTML = `Welcome, <span style="font-weight: 1000;">${firstName}</span>`;
@@ -9,7 +9,7 @@ document.getElementById("userName").innerHTML = `Welcome, <span style="font-weig
 document.getElementById("logoutButton").addEventListener("click", () => {
     localStorage.removeItem("firstName");
     localStorage.removeItem("currentUser");
-    window.location.href = "home.html";
+    window.location.href = "../home/home.html";
 });
 
 document.addEventListener('DOMContentLoaded', () => {

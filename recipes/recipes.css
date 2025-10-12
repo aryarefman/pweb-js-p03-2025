@@ -267,14 +267,14 @@ body::before {
     width: 300px;
     top: -850px;  
     left: -10px; 
-    content: url('image/sun.png'); 
+    content: url('../image/sun.png'); 
 }
 
 [data-theme="dark"] .theme-icon {
     width: 200px;
     top: -800px;  
     left: 30px; 
-    content: url('image/moon.png'); 
+    content: url('../image/moon.png'); 
 }
 
 body {
